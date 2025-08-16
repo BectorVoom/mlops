@@ -22,7 +22,7 @@ jobs:
           aws-region: ap-northeast-1
           role-to-assume: arn:aws:iam::205474062727:role/mlops
       - name: Build and push image
-        uses: docker/build-push-action@main
+        uses: docker/build-push-action@v6
         with:
           context: .                     # ビルドコンテキスト（COPY が参照する場所）
           file: .github/workflows/Dockerfile   # Dockerfile のパスを明示
