@@ -18,9 +18,5 @@ jobs:
     
 
 
-      - run:  |
-          aws ecr get-login-password | docker login --username AWS --password-stdin 205474062727.dkr.ecr.ap-northeast-1.amazonaws.com/mlops
-          docker build -t mlops:550e4278d7cf4314769c3a6536e986129df4bdf376afa16862f813fddadea95c .
-          docker tag mlops:550e4278d7cf4314769c3a6536e986129df4bdf376afa16862f813fddadea95c 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/mlops:550e4278d7cf4314769c3a6536e986129df4bdf376afa16862f813fddadea95c
-          docker push 205474062727.dkr.ecr.ap-northeast-1.amazonaws.com/mlops|aws s3 ls s3://mlops-s3-a
+      - run: aws s3 ls s3://mlops-s3-a
 
