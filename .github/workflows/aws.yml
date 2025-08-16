@@ -18,8 +18,8 @@ jobs:
 
 
       - run:  |
-          aws ecr get-login-password | docker login --username AWS --password-stdin 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+          aws ecr get-login-password | docker login --username AWS --password-stdin 205474062727.dkr.ecr.ap-northeast-1.amazonaws.com/mlops
           docker build -t myrepo:${{ github.sha }} .
           docker tag myrepo:${{ github.sha }} 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo:${{ github.sha }}
-          docker push 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo:${{ github.sha }}|aws s3 ls s3://mlops-s3-a
+          docker push 205474062727.dkr.ecr.ap-northeast-1.amazonaws.com/mlops|aws s3 ls s3://mlops-s3-a
 
