@@ -2,13 +2,13 @@ name: mlops
 
 on:
   push:
-
+permissions:
+      id-token: write
+      contents: read
 jobs:
   s3ls:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
+    
     steps:
       - uses: aws-actions/configure-aws-credentials@main
         with:
