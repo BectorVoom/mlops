@@ -13,7 +13,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@main
       - uses: aws-actions/amazon-ecr-login@main
         with:
-          aws-region: 'ap-northeast-1' 
+          aws-region: ap-northeast-1
           role-to-assume: 'arn:aws:iam::205474062727:role/mlops'
     
       - run:  |
