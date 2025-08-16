@@ -16,5 +16,5 @@ jobs:
           role-to-assume: 'arn:aws:iam::205474062727:role/mlops'
 
 
-      - run: aws s3 ls s3://mlops-s3-a/data/
+      - run: aws s3 ls s3://mlops-s3-a
 
