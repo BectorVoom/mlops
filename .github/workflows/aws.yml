@@ -14,7 +14,12 @@ jobs:
         with:
           aws-region: 'ap-northeast-1' 
           role-to-assume: 'arn:aws:iam::205474062727:role/mlops'
+    
 
 
-      - run: aws s3 ls s3://mlops-s3-a
+      - run:  |
+          aws ecr get-login-password | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-west-2.amazonaws.com
+          docker build -t myrepo:${{ github.sha }} .
+          docker tag myrepo:${{ github.sha }} 123456789012.dkr.ecr.us-west-2.amazonaws.com/myrepo:${{ github.sha }}
+          docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/myrepo:${{ github.sha }}|aws s3 ls s3://mlops-s3-a
 
