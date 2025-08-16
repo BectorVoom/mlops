@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: aws-actions/configure-aws-credentials@main
         with:
-          aws-region: 'ap-northeast-1' # リージョンを指定
-          role-to-assume: 'arn:aws:iam::205474062727:role/mlops' # 作成した IAM ロールの ARN
+          aws-region: 'ap-northeast-1' 
+          role-to-assume: 'arn:aws:iam::205474062727:role/mlops'
 
-      # プライベートな S3 バケットを読み取ってみる
+
       - run: aws s3 ls s3://mlops-s3-a/data/
 
