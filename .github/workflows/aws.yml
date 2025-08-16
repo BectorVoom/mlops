@@ -16,5 +16,5 @@ jobs:
           role-to-assume: 'arn:aws:iam::205474062727:role/mlops' # 作成した IAM ロールの ARN
 
       # プライベートな S3 バケットを読み取ってみる
-      - run: aws s3 ls s3://oidc-example
+      - run: aws s3 ls s3://mlops-s3-a/data/
 
